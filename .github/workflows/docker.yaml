@@ -38,8 +38,8 @@ jobs:
           context: .
           file: docker/test-server/Dockerfile
           push: true
-          build-args:
-            - ETESYNC_VERSION=${{ github.event.release.tag_name }}
+          build-args: |
+            ETESYNC_VERSION=${{ github.event.release.tag_name }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
